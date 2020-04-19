@@ -41,11 +41,10 @@
           className="btn-light btn-block" 
           onClick={ clearUsers }>Clear
         </button>
-      )};
+      )}
     </div>
     )
   }
- 
 
  Search.propTypes = {
   searchUsers: PropTypes.func.isRequired,
@@ -53,6 +52,5 @@
   showClear: PropTypes.bool.isRequired,
   setAlert: PropTypes.func.isRequired,
 };
- 
  export default Search
  
