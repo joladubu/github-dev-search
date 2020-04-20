@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import UserItem from './UserItem';
 import Spinner from '../layout/Spinner';
-import PropTypes from 'prop-types'
+import GithubContext from '../../context/github/GithubContext';
 
   
-const Users = ({ users, loading}) => {
+const Users = () => {
+  // Initializing the github context
+  const githubContext = useContext(GithubContext);
+
+  const { loading, users } = githubContext;
     if(loading) {
       return Spinner
     } else {
@@ -18,12 +22,6 @@ const Users = ({ users, loading}) => {
       );
     }
     
-}
-
-// Defineing the propTypes 
-Users.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired
 }
 
 // defining the style attribute value: userStyle
